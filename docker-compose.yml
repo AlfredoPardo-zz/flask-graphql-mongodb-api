@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+
+  mongo:
+    container_name: fgm_db
+    image: mongo:4.0-xenial
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: fgm
+      MONGO_INITDB_ROOT_PASSWORD: fl4sKGr4phQLM0ngO#
+    ports:
+      - "27017:27017"
+    volumes:
+      - "/fgm/fgm_db:/data/db"
+    networks:
+    - fgm_network
+
+networks:
+  fgm_network:

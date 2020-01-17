@@ -1,0 +1,38 @@
+query   {
+  allCustomers {
+    edges {
+      node {
+        id
+        uid
+        name
+      }
+    }
+  }
+}
+
+mutation addCustomer {
+  addCustomer (uid:"yp", name:"YouTube Premium") {
+    customer {
+      uid
+      name
+    }
+  }
+}
+
+mutation updateCustomer {
+ updateCustomer( uid:"yp", name: "YouTube Premium Service") {
+     customer {
+      uid
+      name
+    }
+  }
+}
+
+mutation deleteCustomer {
+ deleteCustomer( uid:"yp") {
+     customer {
+      uid
+      name
+    }
+  }
+}

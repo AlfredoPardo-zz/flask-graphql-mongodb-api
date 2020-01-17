@@ -1,0 +1,71 @@
+query   {
+  allCloudAccounts {
+    edges {
+      node {
+        id
+        uid
+        name
+        customer {
+          id
+          uid
+          name
+        }
+        cloudProvider {
+          id
+          uid
+          name
+          abbreviation
+        }
+      }
+    }
+  }
+}
+
+mutation addCloudAccount {
+  addCloudAccount (uid:"yp-dev", name:"YouTube Premium Dev", customerUid:"yp", cloudProviderUid:"aws" ) {
+    cloudAccount {
+      uid
+      name
+      customer {
+          id
+          uid
+          name
+      }
+      cloudProvider {
+          id
+          uid
+          name
+          abbreviation
+      }
+    }
+  }
+}
+
+mutation updateCloudAccount {
+ updateCloudAccount(uid:"yp-dev", name:"YouTube Premium Dev", customerUid:"yp", cloudProviderUid:"gcp") {
+     cloudAccount {
+      uid
+      name
+      customer {
+          id
+          uid
+          name
+      }
+      cloudProvider {
+          id
+          uid
+          name
+          abbreviation
+      }
+    }
+  }
+}
+
+mutation deleteCloudAccount {
+ deleteCloudAccount( uid:"yp-dev") {
+     cloudAccount {
+      uid
+      name
+    }
+  }
+}

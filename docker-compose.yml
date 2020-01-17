@@ -2,6 +2,17 @@ version: '3.3'
 
 services:
 
+  api:
+    container_name: fgm_api  
+    build: ./api/
+    restart: always
+    ports: 
+      - "5000:5000"
+    networks:
+      - fgm_network
+    environment:
+      fgm_env: Development
+
   mongo:
     container_name: fgm_db
     image: mongo:4.0-xenial

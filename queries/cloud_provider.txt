@@ -1,0 +1,42 @@
+query   {
+  allCloudProviders {
+    edges {
+      node {
+        id
+        uid
+        name
+        abbreviation
+      }
+    }
+  }
+}
+
+mutation addCloudProvider {
+  addCloudProvider (uid:"do", name:"Digital Ocean", abbreviation:"DO" ) {
+    cloudProvider {
+      uid
+      name
+      abbreviation
+    }
+  }
+}
+
+mutation updateCloudProvider {
+ updateCloudProvider( uid:"do", name: "Digital and Blue Ocean", abbreviation:"DO") {
+     cloudProvider {
+      uid
+      name
+      abbreviation
+    }
+  }
+}
+
+mutation deleteCloudProvider {
+ deleteCloudProvider( uid:"do") {
+     cloudProvider {
+      uid
+      name
+      abbreviation
+    }
+  }
+}

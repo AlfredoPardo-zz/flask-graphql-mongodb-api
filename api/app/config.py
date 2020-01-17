@@ -17,7 +17,7 @@ class DevelopmentConfig(BaseConfig):
         'db': 'fgm_db_dev',
         'username':'fgm',
         'password':'fl4sKGr4phQLM0ngO#',
-        'host': 'fgm_db',
+        'host': 'fgm_db', # fgm_db
         'authentication_source':'admin',
         'port': 27017
     }

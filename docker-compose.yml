@@ -2,6 +2,17 @@ version: '3.3'
 
 services:
 
+  ui:
+    container_name: fgm_ui  
+    build: ./ui/
+    restart: always
+    ports: 
+      - "3000:3000"
+    networks:
+      - fgm_network
+    environment:
+      fgm_env: Development
+
   api:
     container_name: fgm_api  
     build: ./api/

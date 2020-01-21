@@ -1,0 +1,35 @@
+extends base_lte
+
+block content
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        a.navbar-brand(href='#') Flask GraphQL MongoDB UI
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarText.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item
+                    a.nav-link(href='/') Customers
+                li.nav-item.active
+                    a.nav-link(href='#') Cloud Providers
+                li.nav-item
+                    a.nav-link(href='/cloud_accounts') Cloud Accounts
+    .row
+        .col-md-12
+            br
+            
+    .row
+        .col-md-1
+        .col-md-10
+            table.table
+                thead.thead-dark
+                    th UID
+                    th Name
+                    th Abbreviation
+                tbody
+                    {% for cloud_provider in cloud_providers %}
+                    tr
+                        td {{ cloud_provider.node.uid}}
+                        td {{ cloud_provider.node.name}}
+                        td {{ cloud_provider.node.abbreviation}}
+                    {% endfor %}
+        .col-md-1

@@ -1,0 +1,4 @@
+---
+SECRET_KEY: Flask GraphQL MongoDB UI
+BACKEND_URL: fgm_api
+BACKEND_PORT: 5000

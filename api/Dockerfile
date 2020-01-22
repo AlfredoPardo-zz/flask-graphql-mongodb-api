@@ -8,9 +8,12 @@ WORKDIR /api
 ADD ./ /api
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r /api/requirements.txt
 RUN apk update
 RUN apk add busybox-extras
+RUN apk --update add gcc make g++ zlib-dev
+RUN pip install --upgrade pip
+RUN pip install --trusted-host pypi.python.org -r /api/requirements.txt
+
 
 # Define environment variable
 ENV PATH=$PATH:/api/
@@ -18,4 +21,5 @@ ENV PYTHONPATH /api/
 
 # Run when the container launches
 EXPOSE 5000
-CMD python /api/wsgi.py
+#CMD python /api/wsgi.py
+CMD /api/run.sh

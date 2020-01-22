@@ -1,10 +1,15 @@
-# Flask-Based GraphQL API using MongoDB for Persistence
+# Flask-Based GraphQL Application
+
+## Architecture
+
+![Architecture](https://github.com/AlfredoPardo/flask-graphql-mongodb-api/blob/03-UI-as-GraphQL-Client-Integration/resources/flask-graphql-app-architecture.png "Architecture")
 
 ## Getting Started
 
 1. Build and Run the Docker Compose file
 
     > **your_host$** docker-compose build
+    
     > **your_host$** docker-compose up
 
 2. Jump to the API docker container
